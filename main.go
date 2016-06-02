@@ -19,9 +19,6 @@ func readWhisperFile(filename string) error {
 
 	now := time.Now()
 	untilTime := time.Date(now.Year(), now.Month(), now.Day(), 0, 0, 0, 0, time.Local)
-	//untilTime = untilTime.Add(-time.Hour)
-	//.Add(-5 * time.Minute)
-	//fromTime := untilTime.Add(-4 * time.Hour)
 	fromTime := untilTime.Add(-7 * 24 * time.Hour)
 	log.Printf("fromTime=%v", fromTime)
 	log.Printf("untilTime=%v", untilTime)
