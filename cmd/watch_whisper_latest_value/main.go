@@ -10,6 +10,7 @@ import (
 	"math"
 	"os"
 	"path/filepath"
+	"sort"
 	"strings"
 	"time"
 
@@ -149,6 +150,7 @@ func run(whisperDir, globPattern string, interval, offset time.Duration) error {
 			return err
 		}
 		log.Printf("reading %d whisper files", len(filenames))
+		sort.Strings(filenames)
 		for _, filename := range filenames {
 			if err := printLatestValue(whisperDir, filename); err != nil {
 				return err
