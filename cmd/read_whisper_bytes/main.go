@@ -116,9 +116,10 @@ func main() {
 			if err != nil {
 				panic(err)
 			}
+			t := time.Unix(int64(dataPoints[i][j].interval), 0)
 			fmt.Printf("i=%d, j=%d, interval=%d %v, value=%v\n", i, j,
 				dataPoints[i][j].interval,
-				time.Unix(int64(dataPoints[i][j].interval), 0),
+				t.UTC().Format("2006-01-02T15:04:05Z"),
 				dataPoints[i][j].value)
 		}
 	}
